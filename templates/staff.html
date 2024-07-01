@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto 20px; /* Logo'yu yatayda merkezlemek ve altına boşluk eklemek için kullanılır */
+        }
+
+        .quit-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .quit-button button {
+            background-color: #dc3545; /* Kırmızı renk */
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .quit-button button:hover {
+            background-color: #c82333; /* Koyu kırmızı hover rengi */
+        }
+    </style>
+</head>
+<body>
+    <a href="{{ url_for('logout') }}" class="quit-button"><button>Quit</button></a>
+    <div class="container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        <h1>Welcome Staff!</h1>
+        <h2>Feedback List:</h2>
+        <ul>
+            {% for feedback in feedback_list %}
+            <li>{{ feedback.username }} - {{ feedback.feedback }}</li>
+            {% if not feedback.comment_text %}
+            <form method="POST" action="{{ url_for('add_comment', feedback_id=feedback.id) }}">
+                <textarea name="comment" rows="2" cols="50"></textarea><br>
+                <input type="submit" value="Add Comment">
+            </form>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

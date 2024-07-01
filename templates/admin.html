@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto 20px; /* Logo'yu yatayda merkezlemek ve altına boşluk eklemek için kullanılır */
+        }
+
+        .quit-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .quit-button button {
+            background-color: #dc3545; /* Kırmızı renk */
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .quit-button button:hover {
+            background-color: #c82333; /* Koyu kırmızı hover rengi */
+        }
+    </style>
+</head>
+<body>
+    <a href="{{ url_for('logout') }}" class="quit-button"><button>Quit</button></a>
+    <div class="container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        <h1>Welcome Admin!</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Kullanıcı Adı</th>
+                    <th>Kullanıcı Geribildirimi</th>
+                    <th>Staff Yorumu</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for feedback in feedback_list %}
+                <tr>
+                    <td>{{ feedback.username }}</td>
+                    <td>{{ feedback.feedback }}</td>
+                    <td>
+                        {% if feedback.comment_text %}
+                        {{ feedback.comment_text }}
+                        {% else %}
+                        -
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
