@@ -12,6 +12,8 @@ wish to give feedback on. After scanning, they are redirected to a web interface
 register themselves then log in. Registration requires a unique user name and a password which
 is stored in MySQL database.
 
+## Homepage and Loginpage
+
 ![homepage](https://github.com/kriteryumm/Aws_QR_Based_Feedback_System/assets/61352431/ef52e580-18b7-4d91-bfe4-e3ac45ce3a94)
 
 
@@ -30,6 +32,14 @@ submission form tailored to the specific amenity.
 4. Form Submission: Tenants fill out the feedback form, which includes fields for rating, comments,
 and suggestions.
 
+## User Experience Design
+
+![QrUploadpage](https://github.com/kriteryumm/Aws_QR_Based_Feedback_System/assets/61352431/a4e1667a-71cc-4c12-a2ca-681c7e004356)
+
+![enterFeedback](https://github.com/kriteryumm/Aws_QR_Based_Feedback_System/assets/61352431/19a58c7a-8a79-42f7-a1af-9dc7be99c8e9)
+
+![thankyou page](https://github.com/kriteryumm/Aws_QR_Based_Feedback_System/assets/61352431/f19577ea-8dba-44f4-9881-62c26e8da161)
+
 ## Usage Concepts
 ### 1 - AWS EC2 
 We write a flask application and run with Aws EC2 (ubuntu).
@@ -37,6 +47,12 @@ We write a flask application and run with Aws EC2 (ubuntu).
 For the database we used the Aws RDS postresql.
 ### 3 - AWS S3 
 For creating and keeping qr datas we are using Aws S3
+
+## Staff and Admin pages
+
+![staffpage](https://github.com/kriteryumm/Aws_QR_Based_Feedback_System/assets/61352431/1c6bc596-62ec-4ce4-9b52-1d9a9ed005ca)
+
+![adminpage](https://github.com/kriteryumm/Aws_QR_Based_Feedback_System/assets/61352431/9a938986-9e36-48b4-b76d-fd5e1b7667f7)
 
 ## important libraries
 ### 1 - nginx
