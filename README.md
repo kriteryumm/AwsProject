@@ -12,6 +12,12 @@ wish to give feedback on. After scanning, they are redirected to a web interface
 register themselves then log in. Registration requires a unique user name and a password which
 is stored in MySQL database.
 
+![homepage](https://github.com/kriteryumm/Aws_QR_Based_Feedback_System/assets/61352431/ef52e580-18b7-4d91-bfe4-e3ac45ce3a94)
+
+
+![loginpage](https://github.com/kriteryumm/Aws_QR_Based_Feedback_System/assets/61352431/d6692430-0d30-4c51-8d44-8de9267d082d)
+
+
 Once authenticated, tenants can access the feedback submission form. This feedback then
 is forwarded to the administrator.
 ### Feedback Submission Process
