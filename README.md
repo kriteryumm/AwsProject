@@ -54,7 +54,7 @@ For creating and keeping qr datas we are using Aws S3
 
 ![adminpage](https://github.com/kriteryumm/Aws_QR_Based_Feedback_System/assets/61352431/9a938986-9e36-48b4-b76d-fd5e1b7667f7)
 
-## important libraries
+## Important Libraries
 ### 1 - nginx
 For web server software we used nginx library.
 ### 2 - gunicorn
